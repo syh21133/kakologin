@@ -17,8 +17,6 @@ public class KakaoController {
 
     private final KakaoService kakaoService;
 
-
-
     @GetMapping("/callback")
     public String kakaoLogin(@RequestParam String code
         , HttpServletResponse response) throws JsonProcessingException {
