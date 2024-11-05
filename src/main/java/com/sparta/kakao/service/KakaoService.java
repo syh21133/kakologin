@@ -20,12 +20,10 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class KakaoService {
 
-    private RestTemplate restTemplate;
 
     public String getAccessToken(String code) {
 
         String access_Token = "";
-        String refresh_Token = "";
         String reqURL = "https://kauth.kakao.com/oauth/token";
 
         try {
@@ -65,7 +63,6 @@ public class KakaoService {
             JsonElement element = parser.parse(result);
 
             access_Token = element.getAsJsonObject().get("access_token").getAsString();
-            refresh_Token = element.getAsJsonObject().get("refresh_token").getAsString();
 
 
 

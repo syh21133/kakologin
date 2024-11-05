@@ -22,14 +22,7 @@ public class KakaoController {
     @GetMapping("/callback")
     public String kakaoLogin(@RequestParam String code
         , HttpServletResponse response) throws JsonProcessingException {
-        // authorizedCode: 카카오 서버로부터 받은 인가 코드
-        System.out.println("가나다");
-        
-        String token = kakaoService.getAccessToken(code);
-
-        System.out.println(token);
-
-        return token;
+        return kakaoService.getAccessToken(code);
     }
 
 }
